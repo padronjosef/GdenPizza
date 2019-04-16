@@ -7,7 +7,7 @@ const access_token = 'EAAFFEDIM5ZBEBAIebl6by9SwJ3g8rDehAmXbNZBwraMtgUwMV2wu0hgZB
 
 const app = express();
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000 ));
 app.use(bodyParser.json());
 
 app.get('/', function(req, response){
@@ -15,10 +15,10 @@ app.get('/', function(req, response){
 })
 
 app.get('/webhook', function(req, response){
-  if(req.query['hub.verify_token'] === 'gdenpizza_token') {
+  if(req.query['hub.verify_token'] === 'gdenpizza_token'){
     response.send(req.query['hub.challenge']);
   } else {
-    response.send('Gden Pizza no tienes permisos')
+    response.send('Pug Pizza no tienes permisos.');
   }
 });
 
