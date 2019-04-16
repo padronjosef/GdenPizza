@@ -1,0 +1,64 @@
+                    //menu de empezar
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "get_started": {"payload": "GET_STARTED_GDENPIZZA"}
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAFFEDIM5ZBEBAIebl6by9SwJ3g8rDehAmXbNZBwraMtgUwMV2wu0hgZBZAQSiMv1pplifGO1bxxMtBNzuh23KZAtyRS1WOrU6lmVEsKBmvZCFahZBcwJxwWrt0TErhDftBOQrnlbXct3FEDMaRKlfCaZCtSX8zQo2ZBZCZC3LwZBac70fGdkyCgtP4t"
+
+
+                    //saludo de bienvenida
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting": [
+    {
+      "locale":"default",
+      "text":"Hola {{user_first_name}}, soy GdenPizza y te recomiendo las mejores pizzas.!"
+    }, {
+      "locale":"en_US",
+      "text":"hi {{use_first_name}}, i am GdenPizza and i recommend you the best pizzas.!"
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAFFEDIM5ZBEBAIebl6by9SwJ3g8rDehAmXbNZBwraMtgUwMV2wu0hgZBZAQSiMv1pplifGO1bxxMtBNzuh23KZAtyRS1WOrU6lmVEsKBmvZCFahZBcwJxwWrt0TErhDftBOQrnlbXct3FEDMaRKlfCaZCtSX8zQo2ZBZCZC3LwZBac70fGdkyCgtP4t"
+
+
+
+                    //menu persistente
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "persistent_menu":[
+    {
+      "locale":"default",
+      "composer_input_disabled":false,
+      "call_to_actions":[
+        {
+          "title":"gdenPizza",
+          "type":"nested",
+          "call_to_actions":[
+            {
+              "title":"Aserca",
+              "type":"postback",
+              "payload":"ABOUT_PAYLOAD"
+            }
+          ]
+        },
+        {
+          "title":"Menu de productos",
+          "type":"nested",
+          "call_to_actions":[
+            {
+              "title":"Pizzas",
+              "type":"postback",
+              "payload":"PIZZAS_PAYLOAD"
+            }
+          ]
+        },
+        {
+          "type":"web_url",
+          "title":"Pagina Web",
+          "url":"http://padronjose.com",
+          "webview_height_ratio":"full"
+        }
+      ]
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAFFEDIM5ZBEBAIebl6by9SwJ3g8rDehAmXbNZBwraMtgUwMV2wu0hgZBZAQSiMv1pplifGO1bxxMtBNzuh23KZAtyRS1WOrU6lmVEsKBmvZCFahZBcwJxwWrt0TErhDftBOQrnlbXct3FEDMaRKlfCaZCtSX8zQo2ZBZCZC3LwZBac70fGdkyCgtP4t"
+
